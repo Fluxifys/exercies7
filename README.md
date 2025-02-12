@@ -1,4 +1,6 @@
+[![List](https://github.com/Fluxifys/exercies7/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/Fluxifys/exercies7/actions/workflows/build.yml)
 EX 7:
+====
 To do exercise 4, practice CI by
 
     Following the Github Flow strategy
