@@ -24,7 +24,7 @@ jobs:
                 mkdir build && cd build && cmake ..
                 make && ./linked_list_test
             - name: Create Release
-              uses: crowbarmaster/GH-Automatic-Release@latest
+              uses: "crowbarmaster/GH-Automatic-Releases@latest"
               with:
                 repo_token: ${{ secrets.GITHUB_TOKEN }}
                 automatic_release_tag: latest
