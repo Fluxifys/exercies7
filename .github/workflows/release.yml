@@ -1,9 +1,9 @@
-name: List
+name: Release
 
 on:
     push:
         branches:
-        - '*'
+        - 'main'
     pull_request:
         branches:
         - main
@@ -23,3 +23,9 @@ jobs:
               run: |
                 mkdir build && cd build && cmake ..
                 make && ./linked_list_test
+            - name: Create Release
+              uses: crowbarmaster/GH-Automatic-Release@latest
+              with:
+                repo_token: ${{ secrets.GITHUB_TOKEN }}
+                automatic_release_tag: latest
+                title: Latest Version
