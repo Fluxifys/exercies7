@@ -1,0 +1,25 @@
+name: List
+
+on:
+    push:
+        branches:
+        - '*'
+    pull_request:
+        branches:
+        - main
+
+jobs:
+    check:
+        name: Build & Test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Install
+              run: |
+                sudo apt-get install build-essential cmake 
+                sudo apt-get install googletest google-mock libgtest-dev libgmock-dev
+            - name: Build
+              run: |
+                mkdir build && cd build && cmake ..
+                make && linked_list_test
